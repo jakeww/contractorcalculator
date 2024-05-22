@@ -114,7 +114,7 @@ const App = () => {
 
   const copyToClipboard = () => {
     navigator.clipboard.writeText(output);
-    alert('Output copied to clipboard!');
+    alert('Timecard copied to clipboard!');
   };
 
   return (
@@ -134,7 +134,7 @@ const App = () => {
           </div>
         ))}
         <button type="button" onClick={addTimeSlot} className="add-button">Add Break Time</button>
-        <input type="number" name="rate" placeholder="Rate" value={formData.rate} onChange={handleChange} className="input" required />
+        <input type="number" name="rate" placeholder="Hourly Rate" value={formData.rate} onChange={handleChange} className="input" required />
         <label className="checkbox">
           <input type="checkbox" name="driveTime" checked={formData.driveTime} onChange={handleChange} />
           Drive Time
