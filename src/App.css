@@ -60,6 +60,30 @@ body {
   opacity: 1; /* Override default opacity */
 }
 
+.input[type="date"]::-webkit-input-placeholder,
+.input[type="time"]::-webkit-input-placeholder {
+  color: #333;
+  opacity: 1;
+}
+
+.input[type="date"]:-moz-placeholder,
+.input[type="time"]:-moz-placeholder {
+  color: #333;
+  opacity: 1;
+}
+
+.input[type="date"]::-moz-placeholder,
+.input[type="time"]::-moz-placeholder {
+  color: #333;
+  opacity: 1;
+}
+
+.input[type="date"]:-ms-input-placeholder,
+.input[type="time"]:-ms-input-placeholder {
+  color: #333;
+  opacity: 1;
+}
+
 .input[type="date"]::-webkit-calendar-picker-indicator,
 .input[type="time"]::-webkit-calendar-picker-indicator {
   filter: invert(0.5) sepia(1) saturate(5) hue-rotate(175deg);
