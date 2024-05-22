@@ -112,29 +112,30 @@ const App = () => {
     <div className="container">
       <h1 className="title">Contractor Calculator</h1>
       <form onSubmit={handleSubmit} className="form">
-        <input type="date" name="day" value={formData.day} onChange={handleChange} className="input" placeholder="Date" />
-        <input type="text" name="client" placeholder="Client" value={formData.client} onChange={handleChange} className="input" />
-        <input type="text" name="location" placeholder="Location" value={formData.location} onChange={handleChange} className="input" />
-        <input type="text" name="type" placeholder="Type" value={formData.type} onChange={handleChange} className="input" />
-        <input type="text" name="name" placeholder="Name" value={formData.name} onChange={handleChange} className="input" />
-        {formData.times.map((time, index) => (
-          <div key={index} className="time-slot">
-            <input type="time" name="startTime" value={time.startTime} onChange={(e) => handleChange(e, index)} className="input" placeholder="Start Time" />
-            <input type="time" name="endTime" value={time.endTime} onChange={(e) => handleChange(e, index)} className="input" placeholder="End Time" />
-            {index > 0 && <button type="button" onClick={() => removeTimeSlot(index)} className="remove-button">Remove</button>}
-          </div>
-        ))}
-        <button type="button" onClick={addTimeSlot} className="add-button">Add Break Time</button>
-        <input type="number" name="rate" placeholder="Rate" value={formData.rate} onChange={handleChange} className="input" />
-        <label className="checkbox">
-          <input type="checkbox" name="driveTime" checked={formData.driveTime} onChange={handleChange} />
-          Drive Time
-        </label>
-        <div className="button-group">
-          <button type="submit" className="button">Calculate</button>
-          <button type="button" onClick={handleSave} className="button">Save</button>
-        </div>
-      </form>
+  <input type="date" name="day" value={formData.day} onChange={handleChange} className="input" placeholder="Date" required />
+  <input type="text" name="client" placeholder="Client" value={formData.client} onChange={handleChange} className="input" required />
+  <input type="text" name="location" placeholder="Location" value={formData.location} onChange={handleChange} className="input" required />
+  <input type="text" name="type" placeholder="Type" value={formData.type} onChange={handleChange} className="input" required />
+  <input type="text" name="name" placeholder="Name" value={formData.name} onChange={handleChange} className="input" required />
+  {formData.times.map((time, index) => (
+    <div key={index} className="time-slot">
+      <input type="time" name="startTime" value={time.startTime} onChange={(e) => handleChange(e, index)} className="input" placeholder="Start Time" required />
+      <input type="time" name="endTime" value={time.endTime} onChange={(e) => handleChange(e, index)} className="input" placeholder="End Time" required />
+      {index > 0 && <button type="button" onClick={() => removeTimeSlot(index)} className="remove-button">Remove</button>}
+    </div>
+  ))}
+  <button type="button" onClick={addTimeSlot} className="add-button">Add Break Time</button>
+  <input type="number" name="rate" placeholder="Rate" value={formData.rate} onChange={handleChange} className="input" required />
+  <label className="checkbox">
+    <input type="checkbox" name="driveTime" checked={formData.driveTime} onChange={handleChange} />
+    Drive Time
+  </label>
+  <div className="button-group">
+    <button type="submit" className="button">Calculate</button>
+    <button type="button" onClick={handleSave} className="button">Save</button>
+  </div>
+</form>
+
       <div className="output-container">
         <pre className="output">{output}</pre>
         <button onClick={copyToClipboard} className="copy-button">Copy</button>
