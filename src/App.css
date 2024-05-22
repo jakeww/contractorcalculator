@@ -54,6 +54,12 @@ body {
   box-sizing: border-box;
 }
 
+.input[type="date"]::placeholder,
+.input[type="time"]::placeholder {
+  color: #333;
+  opacity: 1; /* Override default opacity */
+}
+
 .input[type="date"]::-webkit-calendar-picker-indicator,
 .input[type="time"]::-webkit-calendar-picker-indicator {
   filter: invert(0.5) sepia(1) saturate(5) hue-rotate(175deg);
