@@ -34,6 +34,9 @@ body {
   font-size: 16px;
   background-color: #ffffff;
   color: #333;
+  outline: none;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .input[type="date"],
@@ -46,6 +49,9 @@ body {
   padding: 10px;
   border-radius: 5px;
   border: 1px solid #ccc;
+  outline: none;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .input[type="date"]::-webkit-calendar-picker-indicator,
@@ -135,6 +141,7 @@ body {
     padding: 12px;
     background-color: #ffffff;
     color: #333;
+    outline: none;
   }
 
   .input[type="date"]::-webkit-datetime-edit,
