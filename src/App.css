@@ -114,3 +114,39 @@ body {
   cursor: pointer;
   margin-top: 10px;
 }
+
+/* Mobile-specific styles */
+@media (max-width: 600px) {
+  .input {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .input[type="date"],
+  .input[type="time"] {
+    background-color: #ffffff;
+    color: #333;
+    padding: 10px;
+    border-radius: 5px;
+  }
+
+  .input[type="date"]::-webkit-datetime-edit,
+  .input[type="time"]::-webkit-datetime-edit {
+    color: #333;
+  }
+
+  .input[type="date"]::-webkit-clear-button,
+  .input[type="time"]::-webkit-clear-button {
+    display: none;
+  }
+
+  .input[type="date"]::-webkit-inner-spin-button,
+  .input[type="time"]::-webkit-inner-spin-button {
+    display: none;
+  }
+
+  .input[type="date"]::-webkit-calendar-picker-indicator,
+  .input[type="time"]::-webkit-calendar-picker-indicator {
+    margin-right: 10px;
+  }
+}
