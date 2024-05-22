@@ -163,20 +163,30 @@ body {
   .input {
     font-size: 14px;
     padding: 8px;
+    background-color: #ffffff; /* Ensure background color is white */
+    color: #333; /* Ensure text color is dark */
+    border: 1px solid #ccc; /* Ensure border is visible */
+    box-sizing: border-box;
   }
 
   .input[type="date"],
   .input[type="time"] {
     font-size: 14px;
     padding: 12px;
-    background-color: #ffffff;
-    color: #333;
+    height: 40px; /* Add explicit height */
+    width: 100%;  /* Ensure full width */
+    background-color: #ffffff; /* Ensure background color is white */
+    color: #333; /* Ensure text color is dark */
     outline: none;
+    border: 1px solid #ccc; /* Ensure border is visible */
+    box-sizing: border-box;
+    appearance: none; /* Remove default appearance */
+    -webkit-appearance: none; /* Remove default appearance on iOS */
   }
 
   .input[type="date"]::-webkit-datetime-edit,
   .input[type="time"]::-webkit-datetime-edit {
-    color: #333;
+    color: #333; /* Ensure text color is dark */
   }
 
   .input[type="date"]::-webkit-clear-button,
@@ -193,7 +203,14 @@ body {
   .input[type="time"]::-webkit-calendar-picker-indicator {
     margin-right: 10px;
   }
+
+  .input[type="date"]:not(:placeholder-shown)::before,
+  .input[type="time"]:not(:placeholder-shown)::before {
+    content: attr(placeholder);
+    color: #333;
+  }
 }
+
 
 /* Dark mode specific styles */
 @media (prefers-color-scheme: dark) {
